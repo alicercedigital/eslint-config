@@ -250,9 +250,4 @@ const generateConfig = (env) => {
   return commonConfig;
 };
 
-module.exports = {
-  next: (module.exports = { ...generateConfig("next") }),
-  react: (module.exports = { ...generateConfig("react") }),
-  node: (module.exports = { ...generateConfig("node") }),
-  nodejs: (module.exports = { ...generateConfig("nodejs") }),
-};
+export default generateConfig;
