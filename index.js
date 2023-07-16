@@ -251,8 +251,8 @@ const generateConfig = (env) => {
 };
 
 module.exports = {
-  next: generateConfig("next"),
-  react: generateConfig("react"),
-  node: generateConfig("node"),
-  nodejs: generateConfig("nodejs"),
+  next: (module.exports = { ...generateConfig("next") }),
+  react: (module.exports = { ...generateConfig("react") }),
+  node: (module.exports = { ...generateConfig("node") }),
+  nodejs: (module.exports = { ...generateConfig("nodejs") }),
 };
