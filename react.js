@@ -1,4 +1,4 @@
-import generateConfig from "./rules";
+const { generateConfig } = require("./rules");
 
 const config = generateConfig("react");
 

@@ -152,7 +152,7 @@ const reactRules = {
  * @returns {import("eslint").Linter.Config}
  */
 
-const generateConfig = (env) => {
+export const generateConfig = (env) => {
   const commonConfig = {
     env: {
       es2021: true,
@@ -249,5 +249,3 @@ const generateConfig = (env) => {
 
   return commonConfig;
 };
-
-export default generateConfig;
