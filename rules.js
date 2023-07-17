@@ -165,7 +165,7 @@ exports.generateConfig = (env) => {
   };
 
   if (env === "next") {
-    commonConfig.browser = true;
+    commonConfig.env.browser = true;
     commonConfig.extends = [
       // Pkgs: eslint-config-next
       "next/core-web-vitals",
@@ -197,7 +197,7 @@ exports.generateConfig = (env) => {
   }
 
   if (env === "react") {
-    commonConfig.browser = true;
+    commonConfig.env.browser = true;
     commonConfig.extends = [
       // Pkgs: eslint-plugin-react
       "plugin:react/recommended",
