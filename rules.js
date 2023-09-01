@@ -57,7 +57,7 @@ const commonRules = {
   "func-style": ["error", "expression"],
 
   // Força usar default export
-  "import/prefer-default-export": ["error"],
+  "import/prefer-default-export": "off",
 
   // Ordem dos imports alfabética e por tipo
   "import/order": ["error", { alphabetize: { order: "asc" } }],
