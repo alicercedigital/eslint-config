@@ -209,13 +209,15 @@ exports.generateConfig = (env) => {
   }
 
   if (env === "react-native") {
-    commonConfig.overrides.push({
-      files: ["expo-env.d.ts"],
-      rules: {
-        // Desativa regra para arquivo do expo
-        "@typescript-eslint/triple-slash-reference": "off",
+    commonConfig.overrides = [
+      {
+        files: ["expo-env.d.ts"],
+        rules: {
+          // Desativa regra para arquivo do expo
+          "@typescript-eslint/triple-slash-reference": "off",
+        },
       },
-    });
+    ];
   }
 
   if (env === "node") {
