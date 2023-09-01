@@ -122,6 +122,17 @@ const reactRules = {
   ],
 };
 
+const jsRulesOnTypescript = {
+  files: ["*.js"],
+  rules: {
+    // Permite usar require (vários configs usam require)
+    "@typescript-eslint/no-var-requires": "off",
+
+    // Permite não tipar funções
+    "@typescript-eslint/explicit-function-return-type": "off",
+  },
+};
+
 /**
  * @param {('next'|'node'|'nodejs'|'react')} env
  * @returns {import("eslint").Linter.Config}
@@ -233,16 +244,12 @@ exports.generateConfig = (env) => {
     commonConfig.rules = commonRules;
   } else {
     // Regras para arquivos JS
-    commonConfig.overrides.push({
-      files: ["*.js"],
-      rules: {
-        // Permite usar require (vários configs usam require)
-        "@typescript-eslint/no-var-requires": "off",
 
-        // Permite não tipar funções
-        "@typescript-eslint/explicit-function-return-type": "off",
-      },
-    });
+    if (!commonConfig.overrides) {
+      commonConfig.overrides = [jsRulesOnTypescript];
+    } else {
+      commonConfig.overrides.push(jsRulesOnTypescript);
+    }
   }
 
   return commonConfig;
