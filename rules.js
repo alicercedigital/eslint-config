@@ -1,29 +1,4 @@
-const prettierRules = {
-  // Default parameters from Prettier
-  arrowParens: "always",
-  bracketSpacing: true,
-  embeddedLanguageFormatting: "auto",
-  filepath: undefined,
-  htmlWhitespaceSensitivity: "css",
-  insertPragma: false,
-  jsxBracketSameLine: false,
-  jsxSingleQuote: false,
-  parser: undefined,
-  proseWrap: "preserve",
-  quoteProps: "as-needed",
-  rangeEnd: Infinity,
-  requirePragma: false,
-  semi: true,
-  singleQuote: false,
-  tabWidth: 2,
-  useTabs: false,
-  vueIndentScriptAndStyle: false,
-
-  // Changed parameters
-  endOfLine: "auto",
-  printWidth: 75,
-  trailingComma: "all",
-};
+const prettierRules = require("./prettier");
 
 const commonRules = {
   // Prettier
@@ -188,13 +163,6 @@ exports.generateConfig = (env) => {
           "@typescript-eslint/triple-slash-reference": "off",
         },
       },
-      {
-        files: ["*.js"],
-        rules: {
-          // Permite usar require (vários configs usam require)
-          "@typescript-eslint/no-var-requires": "off",
-        },
-      },
     ];
     commonConfig.rules = {
       ...commonRules,
@@ -222,15 +190,6 @@ exports.generateConfig = (env) => {
       // Pkgs: eslint-plugin-classnames
       "classnames",
     ];
-    commonConfig.overrides = [
-      {
-        files: ["*.js"],
-        rules: {
-          // Permite usar require (vários configs usam require)
-          "@typescript-eslint/no-var-requires": "off",
-        },
-      },
-    ];
     commonConfig.rules = {
       ...commonRules,
       ...typescriptRules,
@@ -256,15 +215,7 @@ exports.generateConfig = (env) => {
       // Pkgs: prettier eslint-plugin-prettier eslint-config-prettier
       "plugin:prettier/recommended",
     ];
-    commonConfig.overrides = [
-      {
-        files: ["*.js"],
-        rules: {
-          // Permite usar require (vários configs usam require)
-          "@typescript-eslint/no-var-requires": "off",
-        },
-      },
-    ];
+
     commonConfig.rules = {
       ...commonRules,
       ...typescriptRules,
@@ -280,6 +231,18 @@ exports.generateConfig = (env) => {
       "plugin:prettier/recommended",
     ];
     commonConfig.rules = commonRules;
+  } else {
+    // Regras para arquivos JS
+    commonConfig.overrides.push({
+      files: ["*.js"],
+      rules: {
+        // Permite usar require (vários configs usam require)
+        "@typescript-eslint/no-var-requires": "off",
+
+        // Permite não tipar funções
+        "@typescript-eslint/explicit-function-return-type": "off",
+      },
+    });
   }
 
   return commonConfig;
