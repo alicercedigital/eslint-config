@@ -203,7 +203,7 @@ exports.generateConfig = (env) => {
     };
   }
 
-  if (env === "react") {
+  if (env === "react" || env === "react-native") {
     commonConfig.env.browser = true;
     commonConfig.extends = [
       // Pkgs: eslint-plugin-react
@@ -236,6 +236,16 @@ exports.generateConfig = (env) => {
       ...typescriptRules,
       ...reactRules,
     };
+  }
+
+  if (env === "react-native") {
+    commonConfig.overrides.push({
+      files: ["expo-env.d.ts"],
+      rules: {
+        // Desativa regra para arquivo do expo
+        "@typescript-eslint/triple-slash-reference": "off",
+      },
+    });
   }
 
   if (env === "node") {
