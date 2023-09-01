@@ -1,6 +1,6 @@
 {
   "name": "@mestrejs/eslint-config",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Eslint and Prettier config",
   "main": "index.js",
   "author": "Dretz",

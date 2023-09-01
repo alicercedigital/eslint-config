@@ -188,6 +188,13 @@ exports.generateConfig = (env) => {
           "@typescript-eslint/triple-slash-reference": "off",
         },
       },
+      {
+        files: ["*.js"],
+        rules: {
+          // Permite usar require (vários configs usam require)
+          "@typescript-eslint/no-var-requires": "off",
+        },
+      },
     ];
     commonConfig.rules = {
       ...commonRules,
@@ -215,6 +222,15 @@ exports.generateConfig = (env) => {
       // Pkgs: eslint-plugin-classnames
       "classnames",
     ];
+    commonConfig.overrides = [
+      {
+        files: ["*.js"],
+        rules: {
+          // Permite usar require (vários configs usam require)
+          "@typescript-eslint/no-var-requires": "off",
+        },
+      },
+    ];
     commonConfig.rules = {
       ...commonRules,
       ...typescriptRules,
@@ -229,6 +245,15 @@ exports.generateConfig = (env) => {
 
       // Pkgs: prettier eslint-plugin-prettier eslint-config-prettier
       "plugin:prettier/recommended",
+    ];
+    commonConfig.overrides = [
+      {
+        files: ["*.js"],
+        rules: {
+          // Permite usar require (vários configs usam require)
+          "@typescript-eslint/no-var-requires": "off",
+        },
+      },
     ];
     commonConfig.rules = {
       ...commonRules,
