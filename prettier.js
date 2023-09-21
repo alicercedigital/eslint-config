@@ -15,7 +15,7 @@ const prettierRules = {
   requirePragma: false,
   semi: true,
   singleQuote: false,
-  tabWidth: 2,
+  tabWidth: 1,
   useTabs: false,
   vueIndentScriptAndStyle: false,
 

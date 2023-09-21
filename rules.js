@@ -39,6 +39,9 @@ const commonRules = {
 };
 
 const typescriptRules = {
+  // Permite omitir o tipo de retorno de funções
+  "@typescript-eslint/explicit-function-return-type": "off",
+
   // Permite usar variáveis sem ser booleanas em condições
   "@typescript-eslint/strict-boolean-expressions": "off",
 
