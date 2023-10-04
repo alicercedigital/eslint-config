@@ -39,6 +39,9 @@ const commonRules = {
 };
 
 const typescriptRules = {
+  // Força usar type ao invés de interface
+  "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+
   // Permite omitir o tipo de retorno de funções
   "@typescript-eslint/explicit-function-return-type": "off",
 
@@ -120,7 +123,7 @@ const reactRules = {
     "error",
     {
       maxSpaceSeparatedClasses: 0,
-      functionName: "clsx",
+      functionName: "cx",
     },
   ],
 };
