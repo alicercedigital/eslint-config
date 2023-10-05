@@ -154,6 +154,7 @@ exports.generateConfig = (env) => {
       ecmaVersion: "latest",
       sourceType: "module",
     },
+    ignorePatterns: ["node_modules/", "dist/"],
   };
 
   if (env === "next") {
