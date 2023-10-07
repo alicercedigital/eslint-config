@@ -84,6 +84,9 @@ const typescriptRules = {
 
   // Força informar quando um import é apenas uma tipagem
   "@typescript-eslint/consistent-type-imports": "error",
+
+  // Desativa regra de não deixar usar /// (next,vite,native,etc usa)
+  "@typescript-eslint/triple-slash-reference": "off"
 };
 
 const reactRules = {
@@ -126,6 +129,7 @@ const reactRules = {
       functionName: "cx",
     },
   ],
+
 };
 
 const jsRulesOnTypescript = {
@@ -154,7 +158,7 @@ exports.generateConfig = (env) => {
       ecmaVersion: "latest",
       sourceType: "module",
     },
-    ignorePatterns: ["node_modules/", "dist/"],
+    ignorePatterns: ["node_modules", "dist"],
   };
 
   if (env === "next") {
@@ -172,15 +176,6 @@ exports.generateConfig = (env) => {
     commonConfig.plugins = [
       // Pkgs: eslint-plugin-classnames
       "classnames",
-    ];
-    commonConfig.overrides = [
-      {
-        files: ["next-env.d.ts"],
-        rules: {
-          // Desativa regra para arquivo do next
-          "@typescript-eslint/triple-slash-reference": "off",
-        },
-      },
     ];
     commonConfig.rules = {
       ...commonRules,
@@ -205,6 +200,8 @@ exports.generateConfig = (env) => {
       // Pkgs: eslint-plugin-react
       "react",
 
+      'react-refresh',
+
       // Pkgs: eslint-plugin-classnames
       "classnames",
     ];
@@ -212,20 +209,15 @@ exports.generateConfig = (env) => {
       ...commonRules,
       ...typescriptRules,
       ...reactRules,
+      
+      'react-refresh/only-export-components': [
+        'warn',
+        { allowConstantExport: true },
+      ],
+ 
     };
   }
 
-  if (env === "react-native") {
-    commonConfig.overrides = [
-      {
-        files: ["expo-env.d.ts"],
-        rules: {
-          // Desativa regra para arquivo do expo
-          "@typescript-eslint/triple-slash-reference": "off",
-        },
-      },
-    ];
-  }
 
   if (env === "node") {
     commonConfig.extends = [
