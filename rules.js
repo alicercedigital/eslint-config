@@ -86,7 +86,10 @@ const typescriptRules = {
   "@typescript-eslint/consistent-type-imports": "error",
 
   // Desativa regra de não deixar usar /// (next,vite,native,etc usa)
-  "@typescript-eslint/triple-slash-reference": "off"
+  "@typescript-eslint/triple-slash-reference": "off",
+
+  // Desabilita regra que impede usar funções sem retorno
+  "@typescript-eslint/no-confusing-void-expression": "off",
 };
 
 const reactRules = {
