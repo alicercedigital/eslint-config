@@ -21,7 +21,7 @@ const prettierRules = {
 
  // Changed parameters
  endOfLine: "auto",
- printWidth: 100,
+ printWidth: 80,
  trailingComma: "all",
 };
 

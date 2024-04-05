@@ -90,6 +90,12 @@ const typescriptRules = {
 
  // Desabilita regra que impede usar funções sem retorno
  "@typescript-eslint/no-confusing-void-expression": "off",
+
+ // Ocorre qndo usamos strings concatenadas com variáveis que não são strings
+ "@typescript-eslint/restrict-template-expressions": "off",
+
+ // Ocorre qndo usamos uma funçao async ao clicar em um botão
+ "@typescript-eslint/no-misused-promises": "off",
 };
 
 const reactRules = {
