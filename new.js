@@ -17,7 +17,7 @@ const config = {
  ],
  rules: {
   // Prettier
-  "prettier/prettier": prettierRules,
+  "prettier/prettier": ["error", prettierRules],
 
   // Permite usar ternário completo, ajuda na refatoração
   "no-unneeded-ternary": "off",
