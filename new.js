@@ -34,9 +34,6 @@ const config = {
   // Permite não usar default export
   "import/prefer-default-export": "off",
 
-  // Ordem dos imports alfabética e por tipo
-  "import/order": ["error", { alphabetize: { order: "asc" } }],
-
   // Impede de importar o mui errado - recomendação na doc do mui
   "no-restricted-imports": [
    "error",
