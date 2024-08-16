@@ -41,8 +41,9 @@ const config = {
     patterns: ["@mui/*/*/*"],
    },
   ],
-
   // -- TYPESCRIPT --
+  // Permite colocar uma function em um parametro na function direto ex. param={functionX}
+  "@typescript-eslint/no-misused-promises": "off",
 
   // Força usar type ao invés de interface
   "@typescript-eslint/consistent-type-definitions": ["error", "type"],
