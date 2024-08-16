@@ -1,1 +1,1 @@
-Eslint config using Standard with Typescript and Prettier
+# Eslint config using Standard with Typescript and Prettier
