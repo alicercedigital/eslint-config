@@ -100,14 +100,14 @@ const config = {
   // -- REACT --
 
   // Impede de usar && e || em JSX/TSX
-  "no-restricted-syntax": [
-   "error",
-   {
-    selector:
-     ":matches(JSXElement, JSXFragment) > JSXExpressionContainer > LogicalExpression[operator!='??']",
-    message: "Please use ternary operator instead",
-   },
-  ],
+  // "no-restricted-syntax": [
+  //  "error",
+  //  {
+  //   selector:
+  //    ":matches(JSXElement, JSXFragment) > JSXExpressionContainer > LogicalExpression[operator!='??']",
+  //   message: "Please use ternary operator instead",
+  //  },
+  // ],
 
   // Permite usar JSX ou TSX sem importar React
   // "react/react-in-jsx-scope": "off",
@@ -126,7 +126,7 @@ const config = {
    "error",
    {
     maxSpaceSeparatedClasses: 0,
-    functionName: "cx",
+    functionName: "cn",
    },
   ],
  },
