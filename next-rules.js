@@ -30,9 +30,6 @@ module.exports = {
  // Permite colocar uma function em um parametro na function direto ex. param={functionX}
  "@typescript-eslint/no-misused-promises": "off",
 
- // Força usar type ao invés de interface
- "@typescript-eslint/consistent-type-definitions": ["error", "type"],
-
  // Permite omitir o tipo de retorno de funções
  "@typescript-eslint/explicit-function-return-type": "off",
 
@@ -46,17 +43,8 @@ module.exports = {
  // Com || uma string vazia é considerado falso e ?? não
  "@typescript-eslint/prefer-nullish-coalescing": "off",
 
- // Força aspas duplas
- "@typescript-eslint/quotes": ["error", "double"],
-
- // Força ponto e vírgula no final de cada linha
- "@typescript-eslint/semi": ["error", "always"],
-
  // Desativa indentação para o prettier resolver
  "@typescript-eslint/indent": "off",
-
- // Força informar quando um import é apenas uma tipagem
- "@typescript-eslint/consistent-type-imports": "error",
 
  // Desabilita regra que impede usar funções sem retorno
  "@typescript-eslint/no-confusing-void-expression": "off",
